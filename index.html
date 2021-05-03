@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+
+ 
+
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+
+
+    
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+ 
+
+    <script src="myscript.js"></script>
+    <style>
+        body{
+            background-image: url("cor.jpg");
+        }
+        p{
+            font-size: 20px;
+            font-weight: bold;
+            
+        }
+        .center{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .text-center{
+            font-size: 50px;
+        }
+    </style>
+
+</head>
+
+<body  ng-app="Myapp" ng-controller="MyCtrl">
+
+<div class="container">
+
+    <div class="jumbotron py-3">
+
+    <h1 class="text-center">{{title}}</h1>
+    <img src="mask2.jpg" height="200px" width="350px" class="center" > 
+
+    <p class="pt-3">
+
+         For many, the pandemic has caused disarray and uncertainty, and it is easy to become anxious and skeptical.
+
+         However, there are many things we still have control over, and one of those is our attitude.
+
+         A positive attitude can go a long way in times of stress.
+
+         Author Charles Swindoll said, “Life is 10% what happens to me and 90% how I react to it.”
+
+    </p>
+    <h3 class="heading text-center"> GLOBAL STATUS</h3>
+
+    <div class="row  text-center">
+
+        <div class="col-md-4">
+
+        <div class="card bg-warning text-white">
+
+            <div class="card-body">
+
+                <h3>Confirmed cases</h3>
+
+                <h3>{{all_data.confirmed.value}}</h3>
+
+            </div>
+
+        </div>  
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card bg-success text-white">
+
+            <div class="card-body">
+
+                <h3>Recovery cases</h3>
+
+                <h3>{{all_data.recovered.value}}</h3>
+
+            </div>
+
+        </div>  
+
+            
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card bg-danger text-white">
+
+            <div class="card-body">
+
+                <h3>Death cases</h3>
+
+                <h3>{{all_data.deaths.value}}</h3>
+
+            </div>
+
+        </div>  
+
+            
+
+        </div>
+
+            
+
+    </div>
+
+<input 
+
+type="text" 
+
+class="form-control mt-4"
+
+placeholder="enter country here"
+
+ng-model="c"
+
+ng-change="get_c_data()"  
+
+/> 
+
+
+<div class="container-fluid" ng-if="c_data">
+
+<h1 class="text-center mt-4 text-uppercase">{{c}} Status</h1>
+
+<div class="row  text-center mt-4"  >
+
+        <div class="col-md-4">
+
+        <div class="card bg-warning text-white">
+
+            <div class="card-body">
+
+                <h3>Confirmed cases</h3>
+
+                <h3>{{c_data.confirmed.value}}</h3>
+
+            </div>
+
+        </div>  
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card bg-success text-white">
+
+            <div class="card-body">
+
+                <h3>Recovery cases</h3>
+
+                <h3>{{c_data.recovered.value}}</h3>
+
+            </div>
+
+        </div>  
+
+            
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card bg-danger text-white">
+
+            <div class="card-body">
+
+                <h3>Death cases</h3>
+
+                <h3>{{c_data.deaths.value}}</h3>
+
+            </div>
+
+        </div>    
+    </div>
+       <div > 
+           <h3>Last Updated</h3>
+           <h3> {{cc}}</h3>
+    
+    </div>
+
+            
+
+    </div>
+    
+
+    
+
+ 
+
+</div>
+
+ 
+
+</body>
+
+</html>
